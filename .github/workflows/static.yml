@@ -1,0 +1,38 @@
+- name: Github Contributors Icon Generator
+  # You may pin to the exact commit or the version.
+  # uses: jaywcjlove/github-action-contributors@62de11fefc533dcaabc068ca2e440dfe732de41d
+  uses: jaywcjlove/github-action-contributors@v1.3.5
+  with:
+    # Your GITHUB_TOKEN
+    token: # optional, default is ${{ github.token }}
+    # Regular expression filtering
+    filter-author: # optional, default is 
+    # Specify the max count of contributors listed. Default list all contributors.
+    count: # optional
+    # output image path
+    output: # optional, default is CONTRIBUTORS.svg
+    # Truncate username by specified length, `0` for no truncate.
+    truncate: # optional, default is 12
+    # Hide names in `htmlTable`
+    hideName: # optional
+    # Exclude bots users
+    excludeBots: # optional, default is true
+    # Width of the generated SVG.
+    svgWidth: # optional, default is 740
+    # Size of user avatar.
+    avatarSize: # optional, default is 24
+    # Margin of user avatar.
+    avatarMargin: # optional, default is 5
+    # Height of user name.
+    userNameHeight: # optional, default is 0
+    # Template to render SVG.
+    svgTemplate: # optional, default is <svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+  width="{{ width }}"
+  height="{{ contributorsHeight }}"
+>
+  <style>.contributor-link { cursor: pointer; }</style>
+  {{{ contributors }}}
+</svg>
